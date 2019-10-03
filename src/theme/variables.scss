@@ -1,0 +1,62 @@
+$font-path: "../assets/fonts";
+
+$app-direction: ltr;
+
+$loading-md-text-color: #000;
+
+$loading-md-spinner-color: #000;
+
+@import "ionic.globals";
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+
+  main: #44b4d5,
+  darkgrey: #a9a9a9,
+  lightgrey: #d3d3d3,
+  grey: #757575,
+  success: #6ba743,
+  failed: #cb3434,
+  darkblue: #004570,
+  normalblue: #005991,
+  lightblue: #2e5f7e,
+  yellow: #ffb400,
+  white: #FFF,
+  facebook: #3c5a99,
+  googleplus: #dc4a38,
+  orange: #ff6600,
+  lightyellow: #ffd900,
+  lightwhite: #f8f8f8,
+  
+  certificateheader: transparent
+);
+
+$searchbar-ios-input-search-icon-color: #FFF;
+
+$tabs-ios-tab-font-size: 10px;
+$tabs-md-tab-font-size: 10px;
+
+$tabs-md-tab-icon-color: map-get($colors, grey);
+$tabs-md-tab-icon-color-active: map-get($colors, main);
+
+.tabs-md .tab-button {
+  color: map-get($colors, grey) !important;
+}
+
+.tabs-md .tab-button[aria-selected="true"] {
+  color: map-get($colors, main) !important;
+}
+
+@import "ionic.theme.default";
+
+@import "ionic.ionicons";
+
+@import "roboto";
+
+@import "noto-sans";
+
+@import "videogular";

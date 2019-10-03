@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><small>SIGN UP</small></ion-title>
+  </ion-navbar>
+</ion-header>
+<body class="body-content-signup">
+  <div *ngIf="foto == 'undefined' || foto == null || foto == ''">
+    <img onerror="this.onerror=null;this.src='assets/main/user.png';" src="assets/main/user.png" class="round-image" (click)="doSelectImageOption()">
+  </div>
+  <div *ngIf="foto">
+    <img onerror="this.onerror=null;this.src='assets/main/user.png';" src="{{ foto }}" class="round-image" (click)="doSelectImageOption()">
+  </div>
+  <ion-card class="ion-card-signup-form">
+    <form [formGroup]="authForm">
+    <div id="full-name-form">
+      <input type="text" placeholder="Full Name" formControlName="fullname" [(ngModel)]="fullname">
+    </div>
+    <div id="id-card-form">
+      <input type="number" placeholder="ID Card Number" formControlName="cardId" [(ngModel)]="cardId">
+    </div>
+    <div id="email-form">
+      <input type="email" placeholder="Email Address" formControlName="email" [(ngModel)]="email">
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div id="username-form">
+            <input type="text" placeholder="Username" class="username-input" formControlName="username" [(ngModel)]="username">
+          </div>
+        </ion-col>
+        <ion-col>
+          <div id="password-form">
+            <input type="password" placeholder="Password" class="password-input" formControlName="password" [(ngModel)]="password">
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div id="terms-and-condition-position">
+      <p style="white-space: normal; color: #222; text-align: center; font-size: 10px;">By clicking "Submit" you agree to</p>
+      <p style="white-space: normal; color: #222; text-align: center; font-size: 10px;">our <strong>Terms & Condition</strong></p>
+    </div>
+    </form>
+  </ion-card>
+  <button ion-button class="round-button-sign-up" [disabled]="!authForm.valid" (click)="navigationAction()"><p style="text-transform: capitalize; color: white; text-align: center;">Submit</p></button>
+</body>

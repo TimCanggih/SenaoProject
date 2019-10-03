@@ -1,0 +1,129 @@
+{
+  "name": "senao",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "start": "ionic-app-scripts serve",
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint"
+  },
+  "dependencies": {
+    "@angular/animations": "5.2.11",
+    "@angular/common": "5.2.11",
+    "@angular/compiler": "5.2.11",
+    "@angular/compiler-cli": "5.2.11",
+    "@angular/core": "5.2.11",
+    "@angular/forms": "5.2.11",
+    "@angular/http": "5.2.11",
+    "@angular/platform-browser": "5.2.11",
+    "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/action-sheet": "^4.20.0",
+    "@ionic-native/base64": "^4.20.0",
+    "@ionic-native/camera": "^4.20.0",
+    "@ionic-native/core": "~4.20.0",
+    "@ionic-native/date-picker": "^4.20.0",
+    "@ionic-native/email-composer": "^4.20.0",
+    "@ionic-native/file": "^4.20.0",
+    "@ionic-native/file-chooser": "^4.20.0",
+    "@ionic-native/file-opener": "^4.20.0",
+    "@ionic-native/file-path": "^4.20.0",
+    "@ionic-native/file-transfer": "^4.20.0",
+    "@ionic-native/native-page-transitions": "^4.20.0",
+    "@ionic-native/network": "^4.20.0",
+    "@ionic-native/printer": "^4.20.0",
+    "@ionic-native/screen-orientation": "^4.20.0",
+    "@ionic-native/social-sharing": "^4.20.0",
+    "@ionic-native/splash-screen": "~4.20.0",
+    "@ionic-native/status-bar": "~4.20.0",
+    "@ionic/pro": "2.0.4",
+    "@ionic/storage": "2.2.0",
+    "com-badrit-base64": "0.2.0",
+    "com.telerik.plugins.nativepagetransitions": "0.6.5",
+    "cordova-android": "8.0.0",
+    "cordova-ios": "5.0.1",
+    "cordova-plugin-actionsheet": "2.3.3",
+    "cordova-plugin-camera": "4.0.3",
+    "cordova-plugin-datepicker": "0.9.3",
+    "cordova-plugin-email-composer": "0.9.2",
+    "cordova-plugin-file": "6.0.1",
+    "cordova-plugin-file-opener2": "2.2.0",
+    "cordova-plugin-file-transfer": "1.7.1",
+    "cordova-plugin-filechooser": "1.2.0",
+    "cordova-plugin-filepath": "1.5.5",
+    "cordova-plugin-network-information": "2.0.1",
+    "cordova-plugin-printer": "0.8.0",
+    "cordova-plugin-screen-orientation": "3.0.1",
+    "cordova-plugin-x-socialsharing": "5.4.4",
+    "es6-promise-plugin": "4.2.2",
+    "hls.js": "^0.12.2",
+    "ionic-angular": "3.9.5",
+    "ionic-long-press": "^1.5.0",
+    "ionic2-super-tabs": "^5.2.0",
+    "ionicons": "3.0.0",
+    "rxjs": "5.5.11",
+    "sw-toolbox": "3.6.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^8.10.6",
+    "videogular2": "^6.1.1",
+    "zone.js": "0.8.29"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.2.2",
+    "@ionic/lab": "1.0.24",
+    "@types/core-js": "^2.5.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^4.0.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "typescript": "~2.6.2"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-camera": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-x-socialsharing": {
+        "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
+      },
+      "cordova-plugin-actionsheet": {},
+      "cordova-plugin-datepicker": {},
+      "cordova-plugin-file-transfer": {},
+      "com.telerik.plugins.nativepagetransitions": {},
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-file-opener2": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-printer": {
+        "ANDROID_SUPPORT_V4_VERSION": "28.+"
+      },
+      "cordova-plugin-filechooser": {},
+      "cordova-plugin-filepath": {},
+      "com-badrit-base64": {},
+      "cordova-plugin-email-composer": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "config": {
+    "ionic_sass": "./src/config/sass.config.js",
+    "ionic_copy": "./src/config/copy.config.js"
+  }
+}

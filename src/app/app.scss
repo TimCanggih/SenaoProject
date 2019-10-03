@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+.input-has-focus .label[floating] {
+    color: black;
+}
+.swal-title {
+    color: #222;
+    text-align: center;
+    font-family: 'Calibri';
+}
+
+.swal-text {
+    color: #222;
+    font-family: 'Calibri';
+    text-align: center;
+    margin-top: -10px;
+}
+
+.swal-footer {
+    background-color: rgb(245, 248, 250);
+    margin-top: 32px;
+    border-top: 1px solid #E9EEF1;
+    overflow: hidden;
+}
+
+.swal-button--confirm {
+    color: white;
+    font-family: 'Calibri';
+    background-color: #6ba743;
+}
+
+.swal-button--confirm:hover:enabled {
+    background: #5b8d39;
+}
+
+.swal-button--cancel {
+    color: white;
+    font-family: 'Calibri';
+    background-color: #cb3434;
+}
+
+.swal-button--cancel:hover:enabled {
+    background: #a82b2b;
+}
+
+.settings-modal{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+}
+
+.certificate-modal{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+}
+
+.payment-modal{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0,0,0,0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.bottom-toast-image-picker{
+    .toast-wrapper{
+        display: block;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: rgba(0,0,0,0.7);
+        margin-bottom: 5%;
+        width: 90%;
+        border-radius: 10px;
+    }
+}
+
+.bottom-toast-send-comment{
+    .toast-wrapper{
+        display: block;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: rgba(0,0,0,0.7);
+        margin-bottom: 5%;
+        width: 90%;
+        border-radius: 10px;
+    }
+}
+
+.bottom-toast-like-dislike{
+    .toast-wrapper{
+        display: block;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: #222;
+        margin-bottom: 5%;
+        width: 90%;
+        border-radius: 10px;
+    }
+}
+
+.top-toast-network-connect{
+    .toast-wrapper{
+        display: block;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: #6ba743;
+        height: 20px;
+        width: 100%;
+    }
+    .toast-message{
+        text-align: center;
+        font-size: 11px;
+        padding-top: 1%;
+    }
+}
+
+.top-toast-network-disconnect{
+    .toast-wrapper{
+        display: block;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background: #222;
+        height: 20px;
+        width: 100%;
+    }
+    .toast-message{
+        text-align: center;
+        font-size: 11px;
+        padding-top: 1%;
+    }
+}
+.alert-container{
+    button{
+        color: #004570 !important;
+        background-color: transparent !important;
+        text-transform: uppercase !important;
+        font-weight: bold !important;
+        height: 30px;
+    }
+}
+.icon[name="arrow-back"]{
+    font-size: 10px;
+}
+.tabs-md[tabsHighlight="true"] .tab-highlight {
+    background-color: map-get($colors, main);
+}
