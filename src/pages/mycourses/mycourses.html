@@ -1,0 +1,62 @@
+<ion-header no-border>
+  <ion-navbar color="main">
+    <ion-title><small>My Courses</small></ion-title>
+    <ion-buttons end>
+      <button ion-button clear class="refresh-button" (click)="ionViewWillEnter()"><ion-icon name="md-refresh" color="white"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-searchbar class="ion-searchbar" [(ngModel)]="terms"></ion-searchbar>
+</ion-header>
+<ion-content class="ion-content-mycourses">
+  <div *ngFor="let data of data | searchmc : terms; let i = index;">
+    <div *ngIf="response == 'Success' && data.length !== 0">
+      <ion-card class="card-mycourses" (click)="goToProgress({ record: data })">
+        <img onerror="this.onerror=null;this.src='assets/main/img_not_available.png';" src="https://cors-anywhere.herokuapp.com/http://jabarbasithme.com/senao/upload/foto/mapel/{{ data.foto_mapel }}" class="image-ion-card">
+        <div id="title-class">
+          <p style="text-align: center; color: black; text-transform: capitalize; padding-top: 7%; font-size: 20px;"><strong>{{ data.nama_mapel }}</strong></p>
+        </div>
+        <p style="text-align: center; color: #727272; text-transform: capitalize; font-size: 15px; padding-top: 1%;">{{ data.tahun }}</p>
+      </ion-card>
+    </div>
+  </div>
+  <div *ngIf="data.length > 0">
+    <div *ngIf="(data | searchmc: terms).length === 0">
+      <img src="assets/main/search_data_not_found.png">
+    </div>
+  </div>
+  <div *ngIf="response == 'GettingData'">
+    <div class="skeleton-loader">
+      <ion-card class="card-mycourses">
+        <img class="skeleton-image-ion-card">
+        <div id="skeleton-title-class">
+          <img class="p-0">
+          <img class="p-1">
+        </div>
+      </ion-card>
+      <ion-card class="card-mycourses">
+        <img class="skeleton-image-ion-card">
+        <div id="skeleton-title-class">
+          <img class="p-0">
+          <img class="p-1">
+        </div>
+      </ion-card>
+    </div>
+  </div>
+  <div *ngIf="response == 'NotLogin'">
+    <div id="data-not-found-image-middle-position">
+      <img src="assets/main/not_login.png" class="image-response-not-login">
+      <button ion-button color="darkblue" class="button-response-not-login-action" (click)="doSignIn()"><p style="text-transform: capitalize;"><strong>Sign In</strong></p></button>
+    </div>
+  </div>
+  <div *ngIf="response == 'Failed'">
+    <div id="data-not-found-image-middle-position">
+      <img src="assets/main/data_not_found.png">
+    </div>
+  </div>
+  <div *ngIf="response == 'Error'">
+    <div id="data-error-image-middle-position">
+      <img src="assets/main/new_rto_background.png">
+      <button ion-button color="darkblue" class="button-response-action" (click)="ionViewWillEnter()"><p style="text-transform: capitalize;"><strong>Try Again</strong></p></button>
+    </div>
+  </div>
+</ion-content>

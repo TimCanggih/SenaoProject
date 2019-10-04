@@ -1,0 +1,180 @@
+page-mycourses {
+
+    ion-title{
+        text-align: center;
+        padding-left: 25px;
+    }
+
+    ion-searchbar{
+        .searchbar-input-container{
+            .searchbar-clear-icon {
+                filter: brightness(900%);
+            }
+            .searchbar-input{
+                background: #3da0be;
+                color: white;
+                box-shadow: none;
+                border-radius: 6px;
+
+                &::-webkit-input-placeholder{
+                    color: white;
+                }
+            }
+            .searchbar-search-icon{
+                filter: brightness(900%);
+            }
+        }
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+
+    #data-not-found-image-middle-position{
+        margin-top: 8%;
+    }
+
+    #data-error-image-middle-position{
+        margin-top: 10%;
+    }
+
+    #title-class {
+        margin-top: -6%;
+    }
+
+    .ion-content-mycourses{
+        background-color: #FFF;
+    }
+
+    .image-response-not-login{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: 250px;
+    }
+
+    .button-response-action{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 5px;
+        margin-top: -10%;
+    }
+
+    .button-response-not-login-action{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 5px;
+    }
+
+    .refresh-button{
+        float: right;
+        margin-top: 20%;
+    }
+
+    .ion-searchbar{
+        background-color: #44b4d5;
+    }
+
+    .card-mycourses{
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        margin-bottom: 30px;
+    }
+
+    .image-ion-card{
+        width: 100%;
+        height: 210px;
+        border-bottom: 2px dashed #e9e9e9;
+    }
+
+    .skeleton-loader{
+        @keyframes animatedBar{
+            0%{
+                background-position: -406px 0;
+            }
+            100%{
+                background-position: 0 0;
+            }
+        }
+
+        .skeleton-image-ion-card{
+            width: 100%;
+            height: 210px;
+            background-color: lightgrey;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            opacity: 0.5;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+
+        #skeleton-title-class {
+            margin-top: -6%;
+
+            .p-0{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                background: linear-gradient(to right, #dddddd , #EEEEEE);
+                animation: animatedBar 2000ms linear infinite;
+                background-color: lightgrey;
+                margin-top: 10%;
+                margin-bottom: 2%;
+                opacity: 0.5;
+                height: 2em;
+                width: 80%;
+    
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    background-color: white;
+                }
+            }
+
+            .p-1{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                background: linear-gradient(to right, #dddddd , #EEEEEE);
+                animation: animatedBar 2000ms linear infinite;
+                background-color: lightgrey;
+                margin-top: 4%;
+                margin-bottom: 4%;
+                opacity: 0.5;
+                height: 1.5em;
+                width: 50%;
+    
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
