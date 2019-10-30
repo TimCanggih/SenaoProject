@@ -1,0 +1,25 @@
+page-about {
+
+    ion-title{
+        color: #FFF;
+        text-align: center;
+    }
+
+    h3{
+        text-align: center;
+    }
+
+    #senao-description{
+        margin-top: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .body-content-about{
+        background-color: #f7f7f7;
+        background-image: url('../../assets/main/senao_wallpaper.png');
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: center 40px;
+    }
+}
