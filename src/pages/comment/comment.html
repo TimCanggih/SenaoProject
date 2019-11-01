@@ -1,0 +1,97 @@
+<ion-header no-border>
+  <ion-navbar color="main">
+    <ion-title><small>Comment</small></ion-title>
+    <ion-buttons end>
+      <button ion-button clear class="refresh-button" (click)="ionViewWillEnter()"><ion-icon name="md-refresh" color="white"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar color="white">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <div>
+            <form [formGroup]="authForm">
+              <input type="text" placeholder="Subject..." formControlName="subyek" [(ngModel)]="subyek">
+            </form>
+          </div>
+        </ion-col>
+        <ion-col col-7>
+          <div>
+            <form [formGroup]="authForm">
+              <input type="text" placeholder="Type a comment ..." formControlName="deskripsi" [(ngModel)]="deskripsi">
+            </form>
+          </div>
+        </ion-col>
+        <ion-col col-2>
+          <div>
+            <button ion-button color="dark" class="right-button-send" clear icon-only [disabled]="!authForm.valid" (click)="postData()">
+              <ion-icon name="md-send"></ion-icon>
+            </button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-content-comment">
+  <div *ngFor="let data of data; let i = index">
+    <div *ngIf="response == 'CommentFound'">
+      <ion-card class="flat-ion-card">
+        <ion-item>
+          <ion-avatar item-start>
+            <img onerror="this.onerror=null;this.src='assets/main/user.png';" src="https://cors-anywhere.herokuapp.com/http://jabarbasithme.com/senao/upload/foto/siswa/{{ data.foto }}">
+          </ion-avatar>
+          <ng-container *ngIf="data.user_id == userid; then sameuserid; else notsameuserid"></ng-container>
+          <ng-template #sameuserid>
+            <p style="color: #000; text-transform: none; font-size: 11px;"><strong>You • {{ data.tanggal | date: 'short' }}</strong></p>
+            <p style="color: #757575; text-transform: none; font-size: 11px;">Subject : {{ data.subyek }}</p>
+          </ng-template>
+          <ng-template #notsameuserid>
+            <p style="color: #000; text-transform: none; font-size: 11px;"><strong>{{ data.nama }} • {{ data.tanggal | date: 'short' }}</strong></p>
+            <p style="color: #757575; text-transform: none; font-size: 11px;">Subject : {{ data.subyek }}</p>
+          </ng-template>
+        </ion-item>
+        <ion-card-content>
+          <p style="color: #000; text-transform: none;">{{ data.deskripsi }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  <div *ngIf="response == 'CommentNull'">
+    <div id="data-not-found-image-middle-position">
+      <img src="assets/main/no_comment_background.png">
+    </div>
+  </div>
+  <div *ngIf="response == 'CommentError'">
+    <div id="data-error-image-middle-position">
+      <img src="assets/main/new_rto_background.png">
+      <button ion-button color="darkblue" class="button-response-action" (click)="ionViewWillEnter()"><p style="text-transform: capitalize;"><strong>Try Again</strong></p></button>
+    </div>
+  </div>
+  <div *ngIf="response == 'GettingData'">
+    <div class="skeleton-loader">
+      <ion-card class="flat-ion-card">
+        <ion-item>
+          <ion-avatar item-start>
+            <img class="p-0">
+          </ion-avatar>
+          <img class="p-1">
+        </ion-item>
+        <ion-card-content>
+          <img class="p-2">
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="flat-ion-card">
+        <ion-item>
+          <ion-avatar item-start>
+            <img class="p-0">
+          </ion-avatar>
+          <img class="p-1">
+        </ion-item>
+        <ion-card-content>
+          <img class="p-2">
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
