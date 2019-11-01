@@ -1,0 +1,267 @@
+page-courses {
+
+    ion-title{
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    ion-searchbar{
+        .searchbar-input-container{
+            .searchbar-clear-icon {
+                filter: brightness(900%);
+            }
+            .searchbar-input{
+                background: #3da0be;
+                color: white;
+                box-shadow: none;
+                border-radius: 6px;
+
+                &::-webkit-input-placeholder{
+                    color: white;
+                }
+            }
+            .searchbar-search-icon{
+                filter: brightness(900%);
+            }
+        }
+    }
+
+    #right-dashed-border{
+        height: 100%;
+        border-right: 2px dashed #dedede;
+    }
+
+    #left-dashed-border{
+        height: 100%;
+        border-left: 2px dashed #dedede;
+    }
+
+    #data-not-found-image-middle-position{
+        margin-top: 8%;
+    }
+
+    #data-error-image-middle-position{
+        margin-top: 10%;
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
+    }
+
+    .ion-content-courses{
+        background-color: #FFF;
+    }
+
+    .ion-card-courses{
+        border-radius: 6px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        margin-bottom: 30px;
+    }
+
+    .instructor-image{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+        height: 50px;
+        width: 80%;
+    }
+
+    .ion-searchbar{
+        background-color: #44b4d5;
+    }
+
+    .center-bottom-button{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        border-radius: 5px;
+    }
+
+    .skeleton-loader{
+        @keyframes animatedBar{
+            0%{
+                background-position: -406px 0;
+            }
+            100%{
+                background-position: 0 0;
+            }
+        }
+        
+        .skeleton-instructor-image{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            background-color: lightgrey;
+            opacity: 0.5;
+            border-radius: 100%;
+            height: 50px;
+            width: 80%;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+
+        .p-0{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            background-color: lightgrey;
+            opacity: 0.5;
+            height: 15px;
+            width: 100%;
+            margin-top: 15%;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+
+        .p-1{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            background-color: lightgrey;
+            opacity: 0.5;
+            height: 13px;
+            width: 60%;
+            margin-top: 3%;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+
+        .p-2{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            background-color: lightgrey;
+            opacity: 0.5;
+            height: 15px;
+            width: 100%;
+            margin-top: 15%;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+
+        .p-3{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            background-color: lightgrey;
+            opacity: 0.5;
+            height: 13px;
+            width: 60%;
+            margin-top: 3%;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+
+        .skeleton-center-bottom-button{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            background-color: lightgrey;
+            opacity: 0.5;
+            border-radius: 5px;
+            width: 90%;
+            height: 36px;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+    }
+
+    .button-response-not-login-action{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 5px;
+    }
+
+    .image-response-not-login{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: 250px;
+    }
+
+    .button-response-action{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 5px;
+        margin-top: -10%;
+    }
+
+    .refresh-button{
+        float: right;
+        margin-top: 20%;
+    }
+    
+}
