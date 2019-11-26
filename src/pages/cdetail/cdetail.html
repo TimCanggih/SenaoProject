@@ -1,0 +1,215 @@
+<ion-header no-border>
+  <ion-navbar color="main">
+    <ion-title><small>Your Progress</small></ion-title>
+    <ion-buttons end>
+      <button ion-button clear class="refresh-button" (click)="ionViewWillEnter()"><ion-icon name="md-refresh" color="white"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<body>
+  <ion-card class="ion-card-cdetail">
+    <div id="cdetail-ion-card-header">
+      <p style="color: #FFF; white-space: normal; text-align: center; font-size: 20px; padding-top: 6%"><strong>List Lesson</strong></p>
+      <div *ngIf="response == 'Success' && progressResponse == 'ProgressFound' || progressResponse == 'ProgressNotFound'">
+        <p style="color: #FFF; white-space: normal; text-align: center; font-size: 15px; margin-top: -2%;"><strong>Progress : {{ progressPercentage }}%</strong></p>
+      </div>
+    </div>
+  </ion-card>
+  <ion-content class="ion-content-cdetail">
+    <ion-card class="card-courses" *ngFor="let firstData of courseData; let i = index;">
+      <div *ngIf="response == 'Success' && progressResponse == 'ProgressFound' && progressStatus == 'Found'">
+        <div id="title-courses">
+          <p style="text-align: center; color: black; text-transform: capitalize; padding-top: 10%;"><strong>Lesson : {{ firstData.nama_materi }} </strong></p>
+          <p style="text-align: center; color: #757575; text-transform: capitalize; margin-top: -1%; font-size: 13px;">Part : {{ firstData.nama_submateri }}</p>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div *ngFor="let progressData of progressData">
+                <ng-container *ngIf="progressStatus == 'Found'; then showfound1; else shownotfound1"></ng-container>
+                <ng-template #showfound1>
+                  <ng-container *ngIf="firstData.id_materi == progressData.id; then samedata1; else notsamedata1"></ng-container>
+                  <ng-template #samedata1>
+                    <button ion-button outline color="normalblue" class="button-start-courses" (click)="goToLearnings({ record: firstData, records: progressData })"><p style="text-transform: capitalize; color: #005991;"><strong>Start Learning</strong></p></button>
+                  </ng-template>
+                  <ng-template #notsamedata1>
+                    <button ion-button outline color="normalblue" class="button-start-courses" (click)="goToLearning({ record: firstData })"><p style="text-transform: capitalize; color: #005991;"><strong>Start Learning</strong></p></button>
+                  </ng-template>
+                </ng-template>
+                <ng-template #shownotfound1>
+                  <button ion-button outline color="normalblue" class="button-start-courses" (click)="goToLearning({ record: firstData })"><p style="text-transform: capitalize; color: #005991;"><strong>Start Learning</strong></p></button>
+                </ng-template>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div *ngFor="let progressData of progressData">
+                <ng-container *ngIf="progressStatus == 'Found'; then found1; else notfound1"></ng-container>
+                <ng-template #found1>
+                  <ng-container *ngIf="firstData.id_materi == progressData.id; then same1; else notsame1"></ng-container>
+                  <ng-template #same1>
+                    <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Progress</p>
+                    <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong><ion-icon name="md-checkmark-circle" color="success" style="zoom: 2.0"></ion-icon></strong></p>
+                  </ng-template>
+                  <ng-template #notsame1>
+                    <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Progress</p>
+                    <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong><ion-icon name="md-stopwatch" color="yellow" style="zoom: 2.0"></ion-icon></strong></p>
+                  </ng-template>
+                </ng-template>
+                <ng-template #notfound1>
+                  <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Progress</p>
+                  <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong><ion-icon name="md-stopwatch" color="yellow" style="zoom: 2.0"></ion-icon></strong></p>
+                </ng-template>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div *ngIf="response == 'Success' && progressResponse == 'ProgressFound' && progressStatus == 'NotFound'">
+        <div id="title-courses">
+          <p style="text-align: center; color: black; text-transform: capitalize; padding-top: 10%;"><strong>Lesson : {{ firstData.nama_materi }} </strong></p>
+          <p style="text-align: center; color: #757575; text-transform: capitalize; margin-top: -1%; font-size: 13px;">Part : {{ firstData.nama_submateri }}</p>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div>
+                <button ion-button outline color="normalblue" class="button-start-courses" (click)="goToLearning({ record: firstData })"><p style="text-transform: capitalize; color: #005991;"><strong>Start Learning</strong></p></button>
+              </div>
+            </ion-col>
+            <ion-col>
+              <ng-container *ngIf="progressPercentage == '100'; then completed; else notcompleted"></ng-container>
+              <ng-template #completed>
+                <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Progress</p>
+                <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong><ion-icon name="md-checkmark-circle" color="success" style="zoom: 2.0"></ion-icon></strong></p>
+              </ng-template>
+              <ng-template #notcompleted>
+                <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Progress</p>
+                <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong><ion-icon name="md-stopwatch" color="yellow" style="zoom: 2.0"></ion-icon></strong></p>
+              </ng-template>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div *ngIf="response == 'Success' && progressResponse == 'ProgressFound' && progressStatus == 'ErrorFound'">
+        <div id="title-courses">
+          <p style="text-align: center; color: black; text-transform: capitalize; padding-top: 10%;"><strong>Lesson : {{ firstData.nama_materi }} </strong></p>
+          <p style="text-align: center; color: #757575; text-transform: capitalize; margin-top: -1%; font-size: 13px;">Part : {{ firstData.nama_submateri }}</p>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div>
+                <button ion-button outline color="normalblue" class="button-start-courses" (click)="goToLearning({ record: firstData })"><p style="text-transform: capitalize; color: #005991;"><strong>Start Learning</strong></p></button>
+              </div>
+            </ion-col>
+            <ion-col>
+              <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Progress</p>
+              <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong>Error while getting progress. Please refresh page!</strong></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div *ngIf="response == 'Success' && progressResponse == 'ProgressNotFound' && progressStatus == 'FailedFound'">
+        <div id="title-courses">
+          <p style="text-align: center; color: black; text-transform: capitalize; padding-top: 10%;"><strong>Lesson : {{ firstData.nama_materi }} </strong></p>
+          <p style="text-align: center; color: #757575; text-transform: capitalize; margin-top: -1%; font-size: 13px;">Part : {{ firstData.nama_submateri }}</p>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div>
+                <button ion-button outline color="normalblue" class="button-start-courses" (click)="goToLearning({ record: firstData })"><p style="text-transform: capitalize; color: #005991;"><strong>Start Learning</strong></p></button>
+              </div>
+            </ion-col>
+            <ion-col>
+              <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Progress</p>
+              <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong><ion-icon name="md-stopwatch" color="yellow" style="zoom: 2.0"></ion-icon></strong></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div *ngIf="response == 'Success' && progressResponse == 'ProgressError' && progressStatus == 'ErrorFound'">
+        <div id="title-courses">
+          <p style="text-align: center; color: black; text-transform: capitalize; padding-top: 10%;"><strong>Lesson : {{ firstData.nama_materi }} </strong></p>
+          <p style="text-align: center; color: #757575; text-transform: capitalize; margin-top: -1%; font-size: 13px;">Part : {{ firstData.nama_submateri }}</p>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div>
+                <button ion-button outline color="normalblue" class="button-start-courses" (click)="goToLearning({ record: firstData })"><p style="text-transform: capitalize; color: #005991;"><strong>Start Learning</strong></p></button>
+              </div>
+            </ion-col>
+            <ion-col>
+              <p style="white-space: normal; text-align: center; color: #757575; text-transform: capitalize; font-size: 13px;">Status</p>
+              <p style="white-space: normal; text-align: center; color: black; text-transform: capitalize; margin-top: -3%;"><strong>Error while getting progress. Please refresh page!</strong></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-card>
+    <div *ngIf="response == 'NotLogin'">
+      <div id="data-not-login-image-middle-position">
+        <img src="assets/main/not_login.png" class="image-response-not-login">
+        <button ion-button color="darkblue" class="button-response-not-login-action" (click)="doSignIn()"><p style="text-transform: capitalize;"><strong>Sign In</strong></p></button>
+      </div>
+    </div>
+    <div *ngIf="response == 'Failed'">
+      <div id="data-not-found-image-middle-position">
+        <img src="assets/main/data_not_found.png">
+      </div>
+    </div>
+    <div *ngIf="response == 'Error'">
+      <div id="data-error-image-middle-position">
+        <img src="assets/main/new_rto_background.png">
+        <button ion-button color="darkblue" class="button-response-action" (click)="ionViewWillEnter()"><p style="text-transform: capitalize;"><strong>Try Again</strong></p></button>
+      </div>
+    </div>
+    <div *ngIf="response == 'GettingData'">
+      <ion-card class="card-courses">
+        <div class="skeleton-loader">
+          <div id="title-courses">
+            <img class="p-0">
+            <img class="p-1">
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div>
+                  <img class="p-2">
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+                  <img class="p-2">
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-card>
+      <ion-card class="card-courses">
+        <div class="skeleton-loader">
+          <div id="title-courses">
+            <img class="p-0">
+            <img class="p-1">
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div>
+                  <img class="p-2">
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+                  <img class="p-2">
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-card>
+    </div>
+  </ion-content>
+</body>

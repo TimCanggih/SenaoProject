@@ -1,0 +1,197 @@
+page-cdetail {
+
+    ion-title{
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    body{
+        background-color: #44b4d5;
+    }
+
+    #cdetail-ion-card-header{
+        background-color: #004570;
+        height: 13%;
+    }
+
+    #data-not-login-image-middle-position{
+        margin-top: -25%;
+    }
+
+    #data-not-found-image-middle-position{
+        margin-top: 8%;
+    }
+
+    #data-error-image-middle-position{
+        margin-top: 10%;
+    }
+
+    #title-courses {
+        border-bottom: 2px dashed #e9e9e9;
+        margin-top: -6%;
+        padding-bottom: 3%;
+    }
+
+    .refresh-button{
+        float: right;
+        margin-top: 20%;
+    }
+
+    .ion-card-cdetail{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        overflow: hidden;
+        border-radius: 20px;
+        -moz-box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        -webkit-box-shadow: 0 0 5px 5pxrgba(0,0,0,0.2);
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        height: 100%;
+        width: 100%;
+        margin-top: 23%;
+    }
+
+    .button-response-action{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 5px;
+        margin-top: -10%;
+    }
+
+    .button-response-not-login-action{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 5px;
+    }
+
+    .image-response-not-login{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: 250px;
+    }
+
+    .ion-content-cdetail{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        overflow: hidden;
+        background-color: transparent;
+        height: 72%;
+        width: 100%;
+        margin-top: 48%;
+    }
+
+    .card-courses{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .button-start-courses{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+        width: 90%;
+        border-radius: 5px;
+    }
+
+    .skeleton-loader{
+        @keyframes animatedBar{
+            0%{
+                background-position: -406px 0;
+            }
+            100%{
+                background-position: 0 0;
+            }
+        }
+
+        #title-courses {
+            border-bottom: 2px dashed #e9e9e9;
+            margin-top: -6%;
+            padding-bottom: 3%;
+            
+            .p-0{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                background: linear-gradient(to right, #dddddd , #EEEEEE);
+                animation: animatedBar 2000ms linear infinite;
+                background-color: lightgrey;
+                opacity: 0.5;
+                height: 15px;
+                width: 90%;
+                margin-top: 15%;
+    
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    background-color: white;
+                }
+            }
+    
+            .p-1{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                background: linear-gradient(to right, #dddddd , #EEEEEE);
+                animation: animatedBar 2000ms linear infinite;
+                background-color: lightgrey;
+                opacity: 0.5;
+                height: 13px;
+                width: 60%;
+                margin-top: 3%;
+    
+                &:after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    background-color: white;
+                }
+            }
+        }
+
+        .p-2{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            background: linear-gradient(to right, #dddddd , #EEEEEE);
+            animation: animatedBar 2000ms linear infinite;
+            background-color: lightgrey;
+            opacity: 0.5;
+            height: 15px;
+            width: 100%;
+            margin-top: 15%;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: white;
+            }
+        }
+    }
+
+}
